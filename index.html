@@ -4,7 +4,13 @@
   <meta charset="UTF-8">
   <title>Signing into tiktok...</title>
   <script
-      window.location.href = `fgwpro://auth/tiktok?URI=${encodeURIComponent(window.location.href)}`;
+    const url = new URL(window.location.href);
+    const code = url.searchParams.get('code');
+    if (code) {
+      window.location.href = `fgwpro://auth/tiktok?code=${encodeURIComponent(code)}`;
+    } else {
+      document.body.innerText = 'Missing code';
+    }
   </script>
 </head>
 <body>
