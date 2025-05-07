@@ -3,14 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Signing into tiktok...</title>
-  <script>
-    const url = new URL(window.location.href);
-    const code = url.searchParams.get('code');
-    if (code) {
-      window.location.href = `fgwpro://auth/tiktok?code="${code}"`;
-    } else {
-      document.body.innerText = 'Missing code';
-    }
+  <script
+      window.location.href = `fgwpro://auth/tiktok?URI=${encodeURIComponent(window.location.href)}`;
   </script>
 </head>
 <body>
